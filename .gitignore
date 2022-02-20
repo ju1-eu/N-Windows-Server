@@ -1,0 +1,38 @@
+# ju -- https://bw-ju.de -- 5-2-22  -- .gitignore                                                                   
+# ordner/
+# !file.md = Ausnahme, wird versioniert
+# git restore  archiv/md.zip
+!.gitignore
+*.exe
+*.x
+*.mov
+*.html
+.DS_Store
+
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.toc
+
+index.html
+git-log.txt
+README.pdf
+images/Logo/logo-eps-converted-to.pdf
+
+cms-lokal
+cms-server
+texPandoc
+img-out
+images/Video/video.mov
+archiv/md.zip
+archiv/content.zip
+md/x
+code/.ipynb_checkpoints
+code/x
+html

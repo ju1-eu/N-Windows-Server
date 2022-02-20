@@ -1,0 +1,64 @@
+% ju 20-Nov-21
+\documentclass[11pt,paper=a4,fleqn,parskip=half]{scrartcl}   
+\include{content/praeambel-artikel}    
+
+\usepackage[left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.3cm]{geometry}% quer: landscape
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% anpassen
+\include{content/meta} 
+\newcommand{\name}{Horst Weinkauf}% anpassen!!!!!
+\newcommand{\thema}{Thema}% anpassen!!!!!
+\newcommand{\quelle}{\textbf{Fach: \,} \fach\\ \textbf{Dozent: } \name }
+\newcommand{\logo}{\includegraphics[height=0.8cm]{images/Logo1.pdf}}
+
+% Kopfzeile
+\lhead{\quelle}
+%\rhead{\logo}
+\rhead{}
+\title{\titel}
+
+% pro Tabelle: farbige Zeilen im wechsel
+%\rowcolors{1}{}{grau2}% EIN / AUS: \showrowcolors o. \hiderowcolors
+
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{center}
+		\textbf{\Large \thema}\\%14pt
+		\vspace{0.6em}
+		\datum
+	\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% Zusammenfassung 
+	%\begin{abstract} 
+	%\textcolor{purple}{>>Zusammenfassung<<}\\
+	%\raggedleft \small{-- Wikipedia}% 10pt
+	%\end{abstract}
+
+	% Check anpassen
+	\begin{itemize}[label=\checkmark] %\itemsep -2pt
+		\item Check
+	\end{itemize}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% inhalt anpassen
+	%\input{content/tex/neu}
+	%\input{content/tex/Spickzettel-Markdown} 
+ 	%\input{content/tex/Spickzettel-Latex} 
+    %\includepdf[pages=-]{Tabellen/PDF/Zeitrechner.pdf}
+	\input{content/tex/0x-Thema.tex}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Bibliographie
+    \printbibliography
+\end{document}

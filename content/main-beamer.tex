@@ -1,0 +1,76 @@
+% ju 23-Jul-21
+\documentclass[a4paper,16pt,fleqn,parskip=half]{scrartcl}% a4paper, 1920x1080, 3.840x2.160, 4.096x2.160
+\usepackage[landscape,top=1.5cm,bottom=0.5cm,left=1.0cm,right=1.0cm,includeheadfoot]{geometry}
+
+\include{content/praeambel-beamer}% Pakete  
+\usepackage{tikz} 
+% praesentation
+\clearscrheadfoot
+\setkomafont{pagenumber}{\color{grau2}}%grau2
+%\ofoot{\footnotesize \pagemark}
+%\ifoot{\textcolor{grau2}{\footnotesize \titel}} 
+\ihead{\textcolor{grau2}{\footnotesize \titel}}
+\ohead{\footnotesize \pagemark}
+
+%% Kapitelueberschriften farbig
+\usepackage{sectsty}
+\chapterfont{\color{blau5}}
+\sectionfont{\color{blau5}}
+\subsectionfont{\color{blau5}}
+
+
+% Literatur laden
+\bibliography{content/literatur}      %% anpassen
+\bibliography{content/literatur-kfz}  %% anpassen
+\bibliography{content/literatur-sport}%% anpassen
+
+% anpassen
+% Quelle Literaturverzeichnis oder URL in Fussnote 
+\newcommand{\quelle}{Jan Schaffranek franneck94~\footnote{\url{https://github.com/franneck94}}}
+%\newcommand{\quelle}{MathePeter siehe~\textcite{peter:2021:mathe}}% Literaturverzeichnis
+\newcommand{\titel}{Vortrag}%
+\newcommand{\typ}{\LaTeX}
+\newcommand{\autor}{Jan Unger}
+\newcommand{\datum}{\today}
+\newcommand{\datumHand}{Version: 2021/07/23}%
+\newcommand{\website}{http://bw-ju.de}
+\newcommand{\websiteKurz}{bw-ju.de}
+
+\title{\titel}
+\author{\autor}
+\date{\datumHand}
+
+\begin{document}
+
+% titel
+%\maketitle	
+% oder
+\begin{titlepage}
+\thispagestyle{empty}
+    % background picture
+	\begin{tikzpicture}[overlay, remember picture]
+	\node[anchor=north east, %south west s
+		xshift=+0.2cm, %-0.2
+		yshift=+0.2cm] %-0.2
+		at (current page.north east)%south west
+		{\includegraphics[width =1.16\linewidth, height = 0.28\linewidth]{images/titelbild}};%titelbild 
+	\end{tikzpicture}
+
+    \vspace{10.5cm}
+    \color{blau5} %\rule[0.3cm]{\linewidth}{3pt}	\par
+    \huge \textbf{Thema: \titel}
+    \vspace{0.1cm}
+    \large \par \autor
+
+	\setcounter{page}{1}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{content/tex/01_beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\printbibliography
+\end{document}

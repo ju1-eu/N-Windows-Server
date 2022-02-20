@@ -1,0 +1,54 @@
+% ju 24-Okt-21
+\documentclass[11pt,paper=a4,fleqn,parskip=half% ohne Absatzeinzug
+]{scrartcl}   
+\include{content/praeambel-artikel}  
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eingabe
+% Seitenlayout
+\usepackage[left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,includeheadfoot]{geometry}
+\setlength{\footheight}{28.45268pt}
+\setlength{\headheight}{33.16006pt}
+% Kopfzeile
+\ihead{\copyright \enspace $\the\year$ \autor}
+\chead{}%leer lassen
+% mit Logo & QR-Code????
+%\ohead{\includegraphics[width=1.0cm]{images/logo.eps}}% Logo
+%\ifoot{\qrcode[hyperlink,level=Q,version=2,height=1.0cm]{\website}}% QR-Code
+% anpassen
+% Quelle Literaturverzeichnis oder URL in Fussnote 
+\newcommand{\quelle}{Jan Schaffranek franneck94~\footnote{\url{https://github.com/franneck94}}}
+%\newcommand{\quelle}{MathePeter siehe~\textcite{peter:2021:mathe}}% Literaturverzeichnis
+\newcommand{\titel}{Notizen}
+\newcommand{\typ}{\LaTeX}
+\newcommand{\autor}{Jan Unger}
+\newcommand{\datum}{\today}
+\newcommand{\datumHand}{09.07.2021}% ##.##.####
+\newcommand{\website}{http://bw-ju.de}
+\newcommand{\websiteKurz}{bw-ju.de}
+\begin{document}
+
+    %\maketitle
+    % oder
+    \begin{center}
+        \textbf{\Large \titel}\\ % 14pt
+        \vspace{0.4em}
+        \datum
+        %\datumHand
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% anpassen
+	%\input{content/tex/neu}
+	%\input{content/tex/Spickzettel-Markdown}  
+    %\includepdf[pages=-]{Tabellen/PDF/Vektor-und-Matrix.pdf}
+	\input{content/tex/Pics-files.tex}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Bibliographie
+    %\printbibliography
+\end{document}

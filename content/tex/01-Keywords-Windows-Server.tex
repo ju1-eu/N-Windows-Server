@@ -1,0 +1,899 @@
+%ju 20-Feb-22 01-Keywords-Windows-Server.tex
+\section{Microsoft Windows Server}\label{microsoft-windows-server}
+
+Quelle: Udemy Patrick Gruenauer \footnote{\url{https://www.udemy.com/course/microsoft-windows-server-fur-einsteiger/}}
+
+MMOGA \footnote{\url{https://www.mmoga.de}} Windows 11 Professional OEM
+Key:
+
+Windows Download \footnote{\url{https://www.microsoft.com/de-de/software-download/windows11}}
+bootfähigen USB-Sticks erstellen \footnote{\url{https://rufus.ie/de/}}
+
+\subsection{Voraussetzung Software und
+Hardware}\label{voraussetzung-software-und-hardware}
+
+Suche: \verb|pc-info| \textbf{Windows Voraussetzung}:
+Win 10/11 Pro
+
+Powershell mit adminrechten öffnen: \verb|systeminfo|
+(\textbf{Anforderung für Hyper-V muss erfüllt sein.})
+
+Suche: \textbf{Windows Features aktivieren}:
+\verb|Hyper-V|
+
+\textbf{Download Server und Client}
+
+\emph{Windows Server Evaluierungsversion}: Windows Server 2022, englisch
+(Standard), \textbf{180 Tage}, Microsoft Konto
+
+\textbf{6x} 180 Tage \textbf{verlängern} (3 Jahre) in Powershell:
+\verb|slmgr -rearm|
+
+\emph{Windows 10 Evaluierungsversion}: Windows 10 Enterprise, deutsch,
+\textbf{90 Tage}, Microsoft Konto
+
+\subsection{Hyper-V-Manager öffnen}\label{hyper-v-manager-oeffnen}
+
+\begin{enumerate}
+\item
+  $\to$ Hyper-V-Manager: \textbf{LAP} / (re. Mausklick)
+
+  \begin{itemize}
+  \item
+    $\to$ \textbf{Manager für virtuelle Switches}
+
+    \begin{itemize}
+    \item
+      Neuer Virtueller Netzwerkswitch / Intern $\to$ Virtuellen Switch
+      erstellen / \verb|kurs|
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{LAP} / (re. Mausklick)
+
+  \begin{itemize}
+  \item
+    $\to$ \textbf{Neu / Virtueller Computer erstellen}
+
+    \begin{itemize}
+    \item
+      Name und Pfad angeben: \verb|Server01|
+    \item
+      Generation angeben: \verb|Generation 2|
+    \item
+      Speicher zuweisen: \verb|4096| RAM
+    \item
+      Netzwerk konfigurieren: Verbindung: \verb|kurs|
+      (Virtueller Netzwerkswitch)
+    \item
+      Installationsoptionen: ISO:
+      \verb|Windows Server 2022.iso| auswählen
+    \end{itemize}
+  \item
+    $\to$ Virtueller Computer: \textbf{Server01} / (re. Mausklick)
+    Einstellungen
+
+    \begin{itemize}
+    \item
+      Prüfpunkte deaktivieren
+    \item
+      CPU: \verb|2 Kerne| (min.)
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+
+  \begin{itemize}
+  \item
+    \textbf{Setup}: Windows Server 2022 installieren
+
+    \begin{itemize}
+    \item
+      Version: Standard, Desktop
+    \item
+      Name: \verb|administrator| key:
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{LAP} / (re. Mausklick)
+
+  \begin{itemize}
+  \item
+    $\to$ \textbf{Neu / Virtueller Computer erstellen}
+
+    \begin{itemize}
+    \item
+      Name und Pfad angeben: \verb|Server02|
+    \item
+      Generation angeben: \verb|Generation 2|
+    \item
+      Speicher zuweisen: \verb|4096| RAM
+    \item
+      Netzwerk konfigurieren: Verbindung: \verb|kurs|
+      (Virtueller Netzwerkswitch)
+    \item
+      Installationsoptionen: ISO:
+      \verb|Windows Server 2022.iso| auswählen
+    \end{itemize}
+  \item
+    $\to$ Virtueller Computer: \textbf{Server01} / (re. Mausklick)
+    Einstellungen
+
+    \begin{itemize}
+    \item
+      Prüfpunkte deaktivieren
+    \item
+      CPU: \verb|2 Kerne| (min.)
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+
+  \begin{itemize}
+  \item
+    \textbf{Setup}: Windows Server 2022 installieren
+
+    \begin{itemize}
+    \item
+      Version: Standard, Desktop
+    \item
+      Name: \verb|administrator| key:
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{LAP} / (re. Mausklick)
+
+  \begin{itemize}
+  \item
+    $\to$ \textbf{Neu / Virtueller Computer erstellen}
+
+    \begin{itemize}
+    \item
+      Name und Pfad angeben: \verb|Client01|
+    \item
+      Generation angeben: \verb|Generation 2|
+    \item
+      Speicher zuweisen: \verb|4096| RAM
+    \item
+      Netzwerk konfigurieren: Verbindung: \verb|kurs|
+      (Virtueller Netzwerkswitch)
+    \item
+      Installationsoptionen: ISO:
+      \verb|Windows 10 Enterprise.iso| auswählen
+    \end{itemize}
+  \item
+    $\to$ Virtueller Computer: \textbf{Client01} / (re. Mausklick)
+    Einstellungen
+
+    \begin{itemize}
+    \item
+      Prüfpunkte deaktivieren
+    \item
+      CPU: \verb|2 Kerne| (min.)
+    \end{itemize}
+  \end{itemize}
+\item
+  $\to$ Hyper-V-Manager: \textbf{Client01} (doppelklick)
+
+  \begin{itemize}
+  \item
+    \textbf{Setup}: Windows 10 Enterprise installieren
+
+    \begin{itemize}
+    \item
+      Netzwerk: kein Internet Auswahl
+    \item
+      kein Microsoft Konto verbinden: Weiter mit eingeschränktem Setup
+    \item
+      Name: \verb|admin| key:
+    \item
+      Windows anmelden
+    \end{itemize}
+  \item
+    \textbf{Problem}: Windows-Lizenz ist abgelaufen
+  \item
+    $\to$ Hyper-V-Manager: Client01 / (re. Mausklick) Einstellungen
+
+    \begin{itemize}
+    \item
+      Netzwerkkarte: virtueller Switch:
+      \verb|Default-Switch| Auswahl
+    \end{itemize}
+  \item
+    Hyper-V-Manager: \textbf{Client01} (doppelklick)
+  \item
+    \textbf{Windows aktivieren}: Netzwerk / Internet / Neustart
+  \item
+    Kontrolle: Windows Lizenz \textbf{90 Tage gültig}
+  \item
+    $\to$ Hyper-V-Manager: Client01 / (re. Mausklick) Einstellungen
+
+    \begin{itemize}
+    \item
+      Netzwerkkarte: virtueller Switch: \verb|kurs|
+      wieder umstellen
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Grundkonfiguration Server01 - Server02 -
+Client01}\label{grundkonfiguration-server01-server02-client01}
+
+\begin{enumerate}
+\item
+  Hyper-V-Manager: \textbf{Server01} (doppelklick) \textbf{Anmeldung}
+  user: \verb|administrator| key:
+
+  \begin{itemize}
+  \item
+    Server-Manager / Local Server
+  \item
+    $\to$ \textbf{Computer name}: \verb|Server01|
+  \item
+    Neustart
+  \item
+    Server Manager / Local Server
+  \item
+    \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+    Eigenschaften / Internetprotokoll
+
+    \begin{itemize}
+    \item
+      IP address: \verb|192.168.0.1| Subnet mask:
+      \verb|255.255.255.0|
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|ipconfig|
+  \end{itemize}
+\item
+  Hyper-V-Manager: \textbf{Server02} (doppelklick) \textbf{Anmeldung}
+  user: \verb|administrator| key:
+
+  \begin{itemize}
+  \item
+    Server-Manager / Local Server
+  \item
+    $\to$ \textbf{Computer name}: \verb|Server02|
+  \item
+    Neustart
+  \item
+    Server Manager / Local Server
+  \item
+    \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+    Eigenschaften / Internetprotokoll
+
+    \begin{itemize}
+    \item
+      IP address: \verb|192.168.0.2| Subnet mask:
+      \verb|255.255.255.0|
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|ipconfig|
+  \end{itemize}
+\item
+  Hyper-V-Manager: \textbf{Client01} (doppelklick) \textbf{Anmeldung}
+  user: \verb|admin| key:
+
+  \begin{itemize}
+  \item
+    Suche: \verb|pc-infos| $\to$ Diesen PC
+    umbenennen (fortgeschritten): Ändern
+
+    \begin{itemize}
+    \item
+      $\to$ \textbf{Computer name}: \verb|Client01|
+    \end{itemize}
+  \item
+    Neustart
+  \item
+    \textbf{Netzwerk und Interneteinstellungen} / Adapteroptionen ändern
+    /
+  \item
+    \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+    Eigenschaften / Internetprotokoll
+
+    \begin{itemize}
+    \item
+      IP address: \verb|192.168.0.100| Subnet mask:
+      \verb|255.255.255.0|
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|ipconfig|
+  \end{itemize}
+\end{enumerate}
+
+$\to$ Hyper-V-Manager: Je \textbf{Server01}, \textbf{Server02} und
+\textbf{Client01} (doppelklick) \textbf{Anmeldung} user:
+\verb|administrator| bzw.
+\verb|admin| (Client01) key:
+
+\begin{itemize}
+\item
+  Suche: \textbf{Firewall} $\to$ Windows Defender Firewall mit
+  erweiterter Sicherheit
+
+  \begin{itemize}
+  \item
+    Eingehende Regeln:
+
+    \begin{itemize}
+    \item
+      Datei- und Druckerfreigabe Echoanforderung ip4 und ip6 (\textbf{2x
+      Regeln aktivieren})
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Suche: \textbf{Powershell}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=bash]
+# Test in Powershell
+ping 192.168.0.1
+ping 192.168.0.2
+ping 192.168.0.100
+ipconfig /all
+hostname 
+winver
+netstat -a -p TCP
+\end{lstlisting}
+
+\subsection{Windows Server}\label{windows-server}
+
+$\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+\begin{enumerate}
+\item
+  \textbf{Server-Manager}/
+
+  \begin{itemize}
+  \item
+    Local Server/ $\to$ z. B. Zeitzone: Berlin
+  \item
+    Dashboard
+  \item
+    Verwalten
+  \item
+    Tools
+  \end{itemize}
+\item
+  \textbf{Windows Admin Center}
+
+  \begin{itemize}
+  \item
+    Download Windows Admin Center \footnote{\url{https://www.microsoft.com/de-de/windows-server/windows-admin-center}}
+    vom $\to$ Host (Internet)
+  \item
+    kopieren nach $\to$ Server01 und installieren
+  \item
+    \textbf{Browser} öffnen und \url{https://server01} eingeben
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Rollen und Features
+installieren}\label{rollen-und-features-installieren}
+
+$\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+\begin{enumerate}
+\item
+  Server-Manager / Dashboard
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \textbf{Rollen und Features hinzufügen}
+  \item
+    3 x Weiter bis Serverrollen $\to$ \textbf{Web-Server} wählen
+  \item
+    Weiter klicken bis zur Bestätigung $\to$ Installieren
+  \item
+    \textbf{Browser} öffnen und \url{http://localhost} eingeben
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Active Directory
+Domänendienste}\label{active-directory-domaenendienste}
+
+$\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+\begin{enumerate}
+\item
+  Server-Manager / Lokaler Server / Verwalten
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \textbf{Rollen und Features hinzufügen}
+  \item
+    3 x Weiter bis Serverrollen $\to$ \textbf{Active Directory Doman
+    Services} wählen
+  \item
+    Weiter klicken bis zur Bestätigung $\to$ Installieren
+  \end{enumerate}
+\item
+  Server-Manager / Dashboard / Benachrichtigungen
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \textbf{Server zu einem Domain-Controller hochstufen}
+  \item
+    Neue Gesamtstruktur hinzufügen: Domänenname
+    \verb|pagr.inet|
+  \item
+    key:
+  \item
+    4 x Weiter klicken bis zur Bestätigung $\to$ Installieren
+  \item
+    Neustart
+  \item
+    Anmeldung (\textbf{Server01})
+  \end{enumerate}
+\end{enumerate}
+
+$\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+\textbf{Server Manager / Local Server}
+
+\begin{enumerate}
+\item
+  \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+  Eigenschaften / Internetprotokoll
+
+  \begin{itemize}
+  \item
+    DNS-Server: \verb|192.168.0.1|
+    (\textbf{Server01})\
+  \end{itemize}
+\item
+  \textbf{Computername}: $\to$ Domäne:
+  \verb|pagr.inet|
+
+  \begin{itemize}
+  \item
+    Domäne beitreten: user und key von (\textbf{Server01})
+  \item
+    Neustart
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key: von
+    (\textbf{Server01})
+  \item
+    Test in Powershell:
+    \verb|Test-ComputerSecureChannel -Verbose| (True)
+  \end{itemize}
+\end{enumerate}
+
+$\to$ Hyper-V-Manager: \textbf{Client01} (doppelklick)
+\textbf{Anmeldung} user: \verb|admin| key:
+
+\begin{enumerate}
+\item
+  \textbf{Netzwerk und Interneteinstellungen} / Adapteroptionen ändern /
+
+  \begin{itemize}
+  \item
+    \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+    Eigenschaften / Internetprotokoll /
+
+    \begin{itemize}
+    \item
+      DNS-Server: \verb|192.168.0.1|
+      (\textbf{Server01})
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|ping pagr.inet|
+  \end{itemize}
+\item
+  \textbf{Domänen beitritt}
+
+  \begin{itemize}
+  \item
+    Suche: \verb|pc-infos| $\to$ Diesen PC
+    umbenennen (fortgeschritten): \emph{Ändern}
+
+    \begin{itemize}
+    \item
+      $\to$ Domäne: \verb|pagr.inet|\
+    \item
+      Domäne beitreten: user und key von (\textbf{Server01})
+    \end{itemize}
+  \item
+    Neustart
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key: von
+    (\textbf{Server01})
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Active Directory - Benutzer Computer Gruppen und
+Richtlinien}\label{active-directory-benutzer-computer-gruppen-und-richtlinien}
+
+$\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+Server-Manager / Dashboard / \textbf{Tools} / $\to$ Active Directory -
+Benutzer und Computer / Ansicht / Erweiterte Features
+
+\begin{enumerate}
+\item
+  \textbf{Benutzer erstellen}
+
+  \begin{itemize}
+  \item
+    \verb|pagr.inet| (re. Mausklick) Neu /
+    Organisationseinheit: \textbf{HR} erstellen
+  \item
+    \textbf{HR}: (re. Mausklick) Neu / User
+
+    \begin{itemize}
+    \item
+      Name: \verb|Franz Bizeps|
+    \item
+      Benutzeranmeldenname: f.bizeps@pagr.inet
+    \item
+      Passwort muss nach der ersten Anmeldung geändert werden!
+    \end{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Client01} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key: von
+    (\textbf{Server01})
+  \item
+    Suche: \verb|lusrmgr.msc| (Lokale Benutzer und
+    Gruppen)
+
+    \begin{itemize}
+    \item
+      Gruppen / Remotedesktopbenutzer: Objektnamen:
+      \verb|Franz Bizeps| (Namen überprüfen)
+    \end{itemize}
+  \item
+    Abmelden
+  \item
+    \textbf{Anmeldung} user: \verb|f.bizeps| key:
+  \item
+    Test in Powershell:
+
+    \begin{itemize}
+    \item
+      \verb|Test-ComputerSecureChannel| (True)
+    \item
+      \verb|$env:logonserver|
+      (\textbackslash server01)
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Benutzer konfigurieren}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+  \item
+    \textbf{Anmeldung} user: \verb|administrator|
+    key:
+  \item
+    Server-Manager / Dashboard / \textbf{Tools} /
+
+    \begin{itemize}
+    \item
+      $\to$ Active Directory - Benutzer und Computer / Ansicht /
+      Erweiterte Features
+    \end{itemize}
+  \item
+    \verb|pagr.inet|
+  \item
+    \textbf{HR} / \textbf{Franz Bizeps} (re. Mausklick) Eigenschaften
+  \end{itemize}
+\item
+  \textbf{Computerkonten}
+
+  \begin{itemize}
+  \item
+    \verb|pagr.inet| (re. Mausklick) Neu /
+    Organisationseinheit: \textbf{Windows Server} erstellen
+  \item
+    \verb|pagr.inet| (re. Mausklick) Neu /
+    Organisationseinheit: \textbf{Windows Clients} erstellen
+  \item
+    \textbf{Computers} / Client01 $\to$ \textbf{Windows Clients}
+    verschieben
+  \item
+    \textbf{Computers} / Server02 $\to$ \textbf{Windows Server}
+    verschieben
+  \end{itemize}
+\item
+  \textbf{Gruppen erstellen und konfigurieren}
+
+  \begin{itemize}
+  \item
+    \verb|pagr.inet| (re. Mausklick) Neu /
+    Organisationseinheit: \textbf{Gruppen} erstellen
+  \item
+    \textbf{Gruppen} (re. Mausklick) Neu / Gruppe
+
+    \begin{itemize}
+    \item
+      Gruppenname: HR
+    \end{itemize}
+  \item
+    \textbf{HR} / \textbf{Franz Bizeps} (re. Mausklick) Eigenschaften
+
+    \begin{itemize}
+    \item
+      Mitglied von: Hinzufügen / Objektnamen:
+      \verb|HR| (Namen überprüfen)
+    \end{itemize}
+  \end{itemize}
+\item
+  einfache Gruppenrichtlinien erstellen
+\end{enumerate}
+
+\subsection{Netzwerkdienste mit Windows Server
+bereitstellen}\label{netzwerkdienste-mit-windows-server-bereitstellen}
+
+$\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+\textbf{Anmeldung} user: \verb|administrator| key:
+
+Server-Manager / Dashboard / \textbf{Tools} / $\to$ DNS
+
+\begin{enumerate}
+\item
+  \textbf{DNS in Active Directory}
+
+  \begin{itemize}
+  \item
+    Server01 / Forward-Lookupzonen
+  \item
+    \verb|pagr.inet| (re. Mausklick) $\to$ Neuer
+    Host
+
+    \begin{itemize}
+    \item
+      \verb|printer| und
+      \verb|192.168.0.200|
+    \end{itemize}
+  \item
+    \verb|pagr.inet| (re. Mausklick) $\to$ Neuer
+    Alias
+
+    \begin{itemize}
+    \item
+      \verb|drucker| und
+      \verb|printer.pagr.inet|
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|nslookup|
+
+    \begin{itemize}
+    \item
+      \verb|> drucker| (sollte auf printer.pagr.inet
+      zeigen, Address: 192.168.0.200)
+    \item
+      \verb|> exit|
+    \end{itemize}
+  \end{itemize}
+\item
+  DNS auf Server02 manuell einrichten und Zonentransfer durchführen
+  (Ergänzen)
+\item
+  \textbf{DHCP-Server Rolle auf Server02 installieren und konfigurieren}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key:
+  \item
+    Server-Manager / Dashboard
+
+    \begin{enumerate}
+    \def\labelenumii{\arabic{enumii}.}
+    \item
+      \textbf{Rollen und Features hinzufügen}
+    \item
+      3 x Weiter bis Serverrollen $\to$ \textbf{DHCP} wählen
+    \item
+      Weiter klicken bis zur Bestätigung $\to$ Installieren
+    \end{enumerate}
+  \item
+    Neustart
+  \item
+    Server-Manager / Dashboard / \textbf{Benachrichtigungen}
+
+    \begin{itemize}
+    \item
+      $\to$ DHCP-Server Konfiguration abschließen
+    \end{itemize}
+  \item
+    Server-Manager / Dashboard / \textbf{Tools} / $\to$ DHCP
+  \item
+    IPv4 (re. Mausklick) $\to$ Neuer Bereich erstellen
+
+    \begin{itemize}
+    \item
+      Name: \verb|Clients|
+    \item
+      Start IP-address: 192.168.0.100 End IP-address: 192.168.0.200
+    \item
+      weiter bis Abschluß
+    \end{itemize}
+  \item
+    Hyper-V-Manager: \textbf{Client01} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key:
+  \item
+    \textbf{Netzwerk und Interneteinstellungen} / Adapteroptionen ändern
+    /
+
+    \begin{itemize}
+    \item
+      \textbf{Ethernet}: $\to$ Netzwerkkarte (rechte Mausklick) /
+      Eigenschaften / Internetprotokoll
+    \item
+      IP-Adresse automatisch beziehen
+    \item
+      DNS-Serveradresse automatisch beziehen
+    \end{itemize}
+  \item
+    Test in Powershell: \verb|ipconfig -all| (Range:
+    192.168.0.100 - 192.168.0.200)
+  \end{itemize}
+\item
+  \textbf{Server02 als File-Server einsetzen}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key:
+  \item
+    Server-Manager / Dashboard
+
+    \begin{enumerate}
+    \def\labelenumii{\arabic{enumii}.}
+    \item
+      \textbf{Rollen und Features hinzufügen}
+    \item
+      3 x Weiter bis Serverrollen
+    \item
+      $\to$ Datei- und Speicherdienste / Dateiserver und Dateiserver
+      Resource Manager für Dateiserver wählen
+    \item
+      Weiter klicken bis zur Bestätigung $\to$ Installieren
+    \end{enumerate}
+  \item
+    \textbf{Ordner erstellen} \verb|c:\Daten|
+  \item
+    \textbf{Ordner freigeben} \verb|Daten| (re.
+    Mausklick) / Eigenschaften / Freigabe / Erweitere Freigabe
+
+    \begin{itemize}
+    \item
+      Diesen Ordner freigeben
+    \item
+      Berechtigungen / Vollzugriff
+    \end{itemize}
+  \item
+    Test: Suche: \verb|\\server02\Daten|
+  \item
+    Suche: Gruppenrichtlinienverwaltung (Ergänzen)
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Client01} (doppelklick)
+  \item
+    \textbf{Anmeldung} user: \verb|f.bizeps| key:
+  \item
+    Windows Explorer öffnen / Netzwerklaufwerk prüfen
+    \verb|x:\\server02\daten|
+  \end{itemize}
+\item
+  Server02 als Druck-Server einrichten (Ergänzen)
+\end{enumerate}
+
+\subsection{Windows Server Sicherheit}\label{windows-server-sicherheit}
+
+\begin{enumerate}
+\item
+  \textbf{Windows Server Backup auf Server02 installieren}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key:
+  \item
+    Server-Manager / Dashboard
+
+    \begin{enumerate}
+    \def\labelenumii{\arabic{enumii}.}
+    \item
+      \textbf{Rollen und Features hinzufügen}
+    \item
+      4 x Weiter bis Features $\to$ \textbf{Windows Server-Sicherung}
+      wählen
+    \item
+      Weiter klicken bis zur Bestätigung $\to$ Installieren
+    \end{enumerate}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server01} (doppelklick)
+  \item
+    \textbf{Anmeldung} user: \verb|administrator|
+    key:
+  \item
+    \textbf{Ordner erstellen} \verb|c:\Backup|
+  \item
+    \textbf{Ordner freigeben} \verb|Backup| (re.
+    Mausklick) / Eigenschaften / Freigabe / Erweitere Freigabe
+
+    \begin{itemize}
+    \item
+      Diesen Ordner freigeben
+    \item
+      Berechtigungen / Vollzugriff
+    \end{itemize}
+  \item
+    Test: Suche: \verb|\\server02\Daten|
+  \end{itemize}
+\item
+  \textbf{Einen Ordner von Server02 auf Server01 sichern}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{Server02} (doppelklick)
+  \item
+    \textbf{Anmeldung} user:
+    \verb|pagr\administrator| key:
+  \item
+    Server-Manager / Dashboard / Tools
+  \item
+    \textbf{Windows Server-Sicherung} / $\to$ Assistent
+    Sicherungszeitplan
+
+    \begin{itemize}
+    \item
+      Benutzerdefiniert
+    \item
+      Elemente auswählen: \verb|Daten| (Ordner)
+    \item
+      Sicherungszeit: \verb|21:00|,
+      \verb|Einmal pro Tag|
+    \item
+      Sicherung auf einem freigegeben Netzwerkordner erstellen
+    \item
+      Pfad: \verb|\\server01\Backup|
+    \item
+      \textbf{Berechtigung für das planen der Sicherung} user:
+      \verb|pagr\administrator| key:
+    \end{itemize}
+  \item
+    Suche: Aufgabenplanung (Ergänzen)
+  \end{itemize}
+\item
+  \textbf{Windows Updates manuell ausführen}
+
+  \begin{itemize}
+  \item
+    $\to$ Hyper-V-Manager: \textbf{LAP} / (re. Mausklick)
+
+    \begin{itemize}
+    \item
+      $\to$ \textbf{Manager für virtuelle Switches}
+    \item
+      Virtuellen Switch \verb|kurs| / \textbf{Intern}
+      umstellen $\to$ \textbf{Externes Netzwerk} (Internet)
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}

@@ -1,0 +1,30 @@
+\documentclass{exam}
+\usepackage{osm-exam}
+
+% Personendaten laden
+%\input{content/00_metadata.tex}
+
+% anpassen
+\newcommand{\Quelle}{\textbf{Quelle: \,} Kfz-Elektrik \\\textbf{Dozent: } Horst Weinkauf }%Quelle
+\newcommand{\Thema}{Fragen Thema1}%anpassen
+\newcommand{\Datum}{\today}% git log -1 --pretty=format:%h
+
+\begin{document}
+
+  \begin{questions}
+  	
+  	\label{page:beginquestions}	  
+  	\input{content/tex/01_questions.tex}
+	%\clearpage
+  	%\input{content/tex/02_questions.tex}
+  	\label{page:endquestions}
+  	
+  	%\clearpage
+  	%\label{page:beginadditional}
+  	%\input{content/99_leerblaetter.tex}
+  	%\label{page:endadditional}
+  	
+  \end{questions}
+
+  \label{page:last}
+\end{document}

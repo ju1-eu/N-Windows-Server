@@ -1,0 +1,54 @@
+% letztes Update: 15-Jul-21
+\documentclass[%
+    11pt,paper=a4,fleqn,parskip=half% ohne Absatzeinzug
+]{scrartcl}   
+\include{content/praeambel-artikel}   
+% Seitenlayout: ohne includeheadfoot
+\usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+%\setlength{\headheight}{19.34pt}
+% anpassen
+% Quelle Literaturverzeichnis oder URL in Fussnote 
+%\newcommand{\quelle}{MathePeter~\footnote{\url{https://champcademy.teachable.com}}}
+\newcommand{\quelle}{MathePeter siehe~\footnote{\fullcite{peter:2021:mathe}}}% Literaturverzeichnis
+%\newcommand{\quelle}{MathePeter siehe~\textcite{peter:2021:mathe}}% Literaturverzeichnis
+\newcommand{\titel}{Mathe und \LaTeX}
+\newcommand{\autor}{Jan Unger}
+\newcommand{\datum}{\today}
+\newcommand{\datumHand}{09.07.2021}% ##.##.####
+\newcommand{\website}{http://bw-ju.de}
+\newcommand{\websiteKurz}{bw-ju.de}
+% Kopfzeile
+\ihead{\copyright \enspace $\the\year$ \autor \vspace{0.4em}}
+\chead{}% ohne Titel
+% Datum oder mit Logo & QR-Code????
+\ohead{\datum}
+%\ohead{\includegraphics[width=1.0cm]{images/logo.eps}}% Logo
+\ifoot{\qrcode[hyperlink,level=Q,version=2,height=1.0cm]{\website}}% QR-Code
+\cfoot{}% ohne Seitenzahl
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+\begin{document}
+
+\section*{Aufgaben: Brüche kürzen}
+% Aufgaben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate} 
+    \item $ \frac{10}{19} $ \vspace{1em} 
+    \item $ \frac{6}{8} $ \vspace{1em} 
+    \item $ \frac{4}{11} $ \vspace{1em} 
+    \item $ \frac{16}{8} $ \vspace{1em} 
+    \item $ \frac{9}{3} $ \vspace{1em} 
+    \item $ \frac{8}{19} $ \vspace{1em} 
+    \item $ \frac{4}{3} $ \vspace{1em} 
+    \item $ \frac{19}{9} $ \vspace{1em} 
+    \item $ \frac{3}{1} $ \vspace{1em} 
+    \item $ \frac{8}{17} $ \vspace{1em} 
+
+\end{enumerate} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\includepdf[pages=-]{content/Grundlagen-Rechnen.pdf}    
+%\include{content/Neu} % neu
+%\printbibliography
+\end{document}

@@ -1,0 +1,67 @@
+% LaTeX resume using res.cls
+% modifiziert von Jan Unger 11.7.21
+\documentclass[line,margin,fleqn]{res}%11pt,paper=a4,parskip=half
+\include{content/praeambel-cornell}
+
+% Eingabe
+% Seitenlayout
+%\textwidth=5.5in % increase textwidth to get smaller right margin%\  
+
+% anpassen
+% Quelle Literaturverzeichnis oder URL in Fussnote 
+\newcommand{\quelle}{Quelle: }
+%\newcommand{\quelle}{MathePeter siehe~\textcite{peter:2021:mathe}}% Literaturverzeichnis
+\newcommand{\titel}{Thema}
+\newcommand{\autor}{Jan Unger}
+\newcommand{\datum}{\today}
+\newcommand{\website}{http://bw-ju.de}
+\newcommand{\abstand}{31em}%% Position Datum rechts evtl. anpassen
+
+% Literatur
+%\bibliography{content/literatur}
+%\bibliography{content/literatur-kfz}
+%\bibliography{content/literatur-sport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \LaTeX
+% \begin{enumerate}[label=(\alph*)]% (a)
+% \begin{itemize}[label=\checkmark]% check
+% \begin{enumerate}[label={\protect\ding{\value*}},start=192]% (1)
+% \textbf{fetter Text}
+% \textsc{Kapitaelchen}
+% \emph{kursiv}
+% \enspace % Abstand oder \quad
+% \huge{großer Text}
+% \tiny{kleiner Text}
+% \textcolor{rot5}{farbiger Text \LaTeX}
+
+\begin{document}
+
+    % Kopfzeile anpassen
+    \name{\small{\textbf{\quelle} }}
+    \address{\textbf{\Large \titel}}% 14pt
+    \address{\datum}% evtl. anpassen Zeile 17 \abstand
+    % oder
+    %\address{\includegraphics[width=1.0cm]{images/logo.eps}}% Logo
+
+    \begin{resume}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Textteil anpassen
+    
+    \input{content/tex/01_cornell}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{resume}
+
+    % Bibliographie
+    %\printbibliography
+
+\end{document}
+
+
+
+
+
+
+

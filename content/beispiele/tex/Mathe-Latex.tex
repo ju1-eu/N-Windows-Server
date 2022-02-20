@@ -1,0 +1,280 @@
+\section{\textbf{Text Unterstreichen}}
+    \underline{wichtiger Text} und \emph{kursiver Text} und \textbf{fetter Text}
+
+ 
+\section{\textsc{Kapitaelchen}}  
+    Text in Grossbuchstaben setzen durch \LaTeX
+    \begin{itemize} % \item[] avoids bullet
+        \item[] Einen längeren Satz\\ einrücken.
+    \end{itemize}
+
+\section{Vor- und Nachteile}
+    \begin{tabular}[h]{ll}
+        {\textbf{Vorteile}}   &  {\textbf{Nachteile}} \\
+        Argument 1            &  Argument 2 \\
+        Argument A            &  Argument B \\
+    \end{tabular} 
+
+\section{Summe}
+    \begin{tabular}[h]{clrr}
+        & Betrag &               &  $1.000,00$ \\
+    $-$ & Skonto & $2\%$         &     $20,00$ \\
+        \hline
+    $=$ & $\sum$ &               &    $980,00$  
+    \end{tabular} 
+    
+\section{Division Zinsen}
+    $
+        \frac{\text{ Betrag } \cdot \text{ Prozentsatz } \cdot \text{ Zeit } }{100 \cdot \text{ Zeitgröße }} 
+        = \frac{12.597,90 \cdot 12 \cdot 20 \text{ T } }{100 \cdot 360} 
+        = 83,99 \text{ \euro }
+    $
+
+    \begin{align*}
+        \frac{\text{ Betrag } \cdot \text{ Prozentsatz } \cdot \text{ Zeit } }{100 \cdot \text{ Zeitgröße }} 
+        = \frac{12.597,90 \cdot 12 \cdot 20 \text{ T } }{100 \cdot 360} 
+        = 83,99 \text{ \euro }
+    \end{align*} 
+
+\section{Tabelle 2}
+    \begin{table}[!ht]% hier: !ht 
+        \begin{tabular}{@{}lcr@{}}
+        \toprule 
+        \textbf{Großbuchstaben} & \textbf{Kleinbuchstaben} & \textbf{Name}\\
+        \midrule
+        21 \euro & 22000 & 230.000 \\
+        $31$ \euro & $32000$ & $330.000$ \\
+        \bottomrule
+        \end{tabular}
+    \end{table}
+
+\section{Checkliste}
+    Meine Liste
+    \begin{itemize} \itemsep -2pt  % reduce space between items
+        \item[$\Box$]   Punkt 1
+        \item[$\Box$]   Aufgabe 2 
+    \end{itemize}
+
+    \begin{itemize}[label=\checkmark] \itemsep -2pt
+        \item Check 1
+        \item Check 2   
+    \end{itemize}
+
+\section{\textcolor{rot5}{Nenne 4x Lerzielstufen (Taxonomien)}}
+    \begin{enumerate}[label={\protect\ding{\value*}},start=192]
+        \item Reproduktion
+        \item Reorganisieren
+        \item Transfer
+        \item Kreativ
+    \end{enumerate}
+
+\section{Wurzel berechnen}
+    \begin{multicols}{3}
+        \begin{enumerate}[label=(\alph*)]
+            \item $\sqrt{169}$
+            \item $\sqrt{0,36}$
+            \item $\frac{\sqrt{45}}{\sqrt{80}}$
+        \end{enumerate}
+    \end{multicols}
+
+\section{Aufgabe Logik}
+    Formalisieren Sie die folgenden Aussagen und verneinen Sie sie anschließend (ohne das Wort nicht davor zu setzen) und übersetzen Sie wieder in Umgangssprache:
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Volksmund: >>Bei Nacht sind alle Katzen grau.<<
+        \item Plakatwerbung: >>Wenn einer hochguckt, dann gucken alle.<<
+        \item Gorbatschov: >>Wer zu spät kommt, den bestraft das Leben.<<
+    \end{enumerate}
+
+\section{Quotientenregel}
+    \begin{itemize} % \item[] ohne bullet
+        \item[] $\left(\frac{u}{v}\right)^{\prime} = \frac{u^{\prime} \cdot v-u \cdot v^{\prime}}{v^{2}}$
+        
+        \item[] $\frac{\text{ Ableiten } \cdot \text{ Stehen lassen } - \text{ Stehen lassen } \cdot \text{ Ableiten }}{\text{ Nenner}^2}$
+    \end{itemize}
+
+    
+\section{Logarithmus}
+    \begin{align}
+        ln(a \cdot b)   &= ln(a) + ln(b) \\
+        ln(\frac{a}{b}) &= ln(a) - ln(b) \\
+        ln(a^b)         &= b \cdot ln(a)
+    \end{align}
+
+    \newpage
+\section{\LaTeX - Assistent}
+    Formeleditor~\footnote{\url{https://www.matheretter.de/rechner/latex}}
+    \begin{align}
+        \text{ Matrix }       &= \begin{pmatrix} a & b \\ c & d \end{pmatrix} \\
+        \text{ Vektor }       &= \begin{pmatrix} x\\y \end{pmatrix} \\
+        \text{ Vektorbuchstabe } &= \vec{x} \\
+        \text{ Wurzel }       &= \sqrt[n]{a} \text{ Potenz } a^{b} \\
+        \text{ Bruch }        &= \frac{a}{b} \\
+        \text{ Log }          &= \log_{b}{a} \\
+        \text{ Summe }        &= \sum \limits_{n=0}^{\infty} \\
+        \text{ Index }        &= x_{1,2} \\
+        \text{ Klammern }     &= \left\{x, y\right\} \\
+        \text{ Alphabet kl. } &= +\\%α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω \\
+        \text{ Alphabet gr. } &= +\\%Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω \\
+        \text{ Element }      &= \in \notin \sum \quad \prod \quad () \quad \to \quad \infty\\
+        \text{ Mengen }       &= \mathbb{N} \mathbb{Z} \mathbb{Q} \mathbb{R} \mathbb{I} \mathbb{C} \mathbb{L} \\
+        \text{ Relation }     &= < > \geq \leq \neq \subset \subseteq \approx \in \supset \supseteq \notin \\
+        \text{ Pfeile }       &= +\\%\rightarrow \leftarrow \Longleftrightarrow \Longrightarrow \Longleftarrow \\
+    \end{align}
+
+\section{Formeln in einer Zeile}
+    $
+        u = \bar{u} + \epsilon \cdot u_1 \quad
+        v = \bar{v} + \epsilon \cdot v_1 \quad
+        w = \bar{w} + \epsilon \cdot w_1 \quad
+    $
+
+    $
+        \left( \begin{array}{rrr}
+            1 & 0 & 0 \\                                              
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\                                              
+        \end{array}\right)
+    $
+
+\section{Sonderzeichen}
+    \textbackslash \{...\} \$ \& \# \textdegree \^{} \_ \textasciitilde \%
+
+\section{Währungszeichen}
+    \euro 100 \textdollar 100 \textsterling 100 $1.000,00 \text{ \euro }$ 1.000,00 \euro
+
+\section{Leerzeichen}
+\begin{itemize} % \item[] avoids bullet
+    \item[] [a\,b] ($0.16667em$)
+    \item[] [a\:b] ($0.2222em$)
+    \item[] [a\enspace b] ($0.5em$)
+    \item[] [a\quad b] ($1em$)
+    \item[] [a\hspace{5em} b] (5em)
+\end{itemize}
+
+\newpage
+\section{Griechisches Alphabet}
+    \begin{table}[!ht]% hier: !ht 
+        \begin{tabular}{@{}ccl@{}}
+        \toprule 
+        \textbf{Großbuchstaben} & \textbf{Kleinbuchstaben} & \textbf{Name}\\
+        \midrule
+        A & $\alpha$ & Alpha\\
+        B & $\beta$ & Beta\\
+        $\Gamma$ & $\gamma$ & Gamma \\
+        $\Delta$ & $\delta$ & Delta\\
+        E & $\epsilon$, $\varepsilon$ & Epsilon\\
+        Z & $\zeta$ & Zeta\\
+        H & $\eta$ & Eta\\
+        $\Theta$ & $\theta$, $\vartheta$ & Theta\\
+        I & $\iota$ & Iota\\
+        K & $\kappa$, $\varkappa$ & Kappa\\
+        $\Lambda$ & $\lambda$ & Lambda\\
+        M & $\mu$ & My\\
+        N & $\nu$ & Ny\\
+        $\Xi$ & $\xi$ & Xi\\
+        O & o & Omikron\\
+        $\Pi$ & $\pi$, $\varpi$ & Pi\\
+        P & $\rho$, $\varrho$ & Rho\\
+        $\Sigma$ & $\sigma$, $\varsigma$ & Sigma\\
+        T & $\tau$ & Tau\\
+        Y & $\upsilon$ & Ypsilon\\
+        $\Phi$ & $\phi$, $\varphi$ & Phi\\
+        X & $\chi$ & Chi\\
+        $\Psi$ & $\psi$ & Psi\\
+        $\Omega$ & $\omega$ & Omega\\
+        \bottomrule
+        \end{tabular}
+    \end{table}
+
+\section{Tabelle 3}
+    Tabellengenerator~\footnote{\url{https://www.tablesgenerator.com/}} 
+    und Rechner~\footnote{\url{https://www.matheretter.de/rechner/latex}}
+
+    \begin{multicols}{2}
+        \begin{tabular}[h]{ll|l}
+            &  A     & B     \\ 
+        \hline
+        1)* &  $a_1$ & $b_1$ \\
+        2)  &  $a_2$ & $b_2$ \\
+        3)  &  $a_3$ & $b_3$ 
+        \end{tabular}
+        
+        \columnbreak% Spalte
+        *Beachte: $\sqrt[n]{x} = x^\frac{1}{n}$       
+    \end{multicols}
+
+\section{Tabelle und Grafik}
+    \begin{multicols}{2}
+        \begin{tabular}[h]{l|c|r}
+            Spalte 1 & Spalte 2 & Spalte 3 \\
+            \hline
+            heise & tipps & tricks \\
+        \end{tabular}    
+
+        \columnbreak% Spalte
+
+        \includegraphics[width=2.0cm]{images/logo.eps}% Logo   
+    \end{multicols}  
+
+\newpage
+\section{Farben}
+    \begin{testcolors}[rgb,cmyk,HTML,gray]
+        \testcolor{black}
+        \testcolor{white}
+        \testcolor{darkgray}
+        \testcolor{gray}
+        \testcolor{lightgray}
+        \testcolor{red}
+        \testcolor{green}
+        \testcolor{blue}
+        \testcolor{cyan}
+        \testcolor{magenta}
+        \testcolor{yellow}
+        \testcolor{brown}
+        \testcolor{lime}
+        \testcolor{olive}
+        \testcolor{orange}
+        \testcolor{pink}
+        \testcolor{purple}
+        \testcolor{teal}
+        \testcolor{violet}
+        \testcolor{rot5}
+        \testcolor{blau5}  
+        \testcolor{grau2}    
+        \testcolor{orange}                       
+    \end{testcolors}
+    
+\section{Farbenfolgen}
+    \definecolorseries{test}{rgb}{step}[rgb]{.95,.85,.55}{.17,.47,.37}
+    \definecolorseries{test}{hsb}{step}[hsb]{.575,1,1}{.11,-.05,0}
+    \definecolorseries{test}{rgb}{grad}[rgb]{.95,.85,.55}{3,11,17}
+    \definecolorseries{test}{hsb}{grad}[hsb]{.575,1,1}{.987,-.234,0}
+    \definecolorseries{test}{rgb}{last}[rgb]{.95,.85,.55}[rgb]{.05,.15,.55}
+    \definecolorseries{test}{hsb}{last}[hsb]{.575,1,1}[hsb]{-.425,.15,1}
+    \definecolorseries{test}{rgb}{last}{red!50}{blue}
+    \definecolorseries{test}{hsb}{last}{yellow!50}{black}
+    \definecolorseries{test}{cmy}{last}{orange!50}{green}
+
+    \resetcolorseries[12]{test}
+    \rowcolors[\hline]{1}{test!!+}{test!!+}
+    \setlength{\tabcolsep}{5mm} % Abstände zwischen den Spalten
+    \begin{tabular}[h]{c||c||c||c||c||c||c||c||c||c}
+        $S_1$ & $S_2$ & $G_1$ & $G_2$ & $L_1$ & $L_2$ & $L_3$ & $L_4$ & $L_5$ \\
+        \hline \hline
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\
+        \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum & \number\rownum \\ 
+    \end{tabular}

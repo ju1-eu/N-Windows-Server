@@ -1,0 +1,80 @@
+% ju 20-Feb-22
+\documentclass[11pt,paper=a4,fleqn,parskip=half]{scrartcl}   
+\include{content/praeambel-artikel}    
+
+\usepackage[left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.3cm]{geometry}% quer: landscape
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% anpassen
+\newcommand{\titel}{Microsoft Windows Server für Einsteiger}
+\newcommand{\name}{IT-Trainer Patrick Gruenauer}
+\newcommand{\datum}{\today}
+%\newcommand{\quelle}{\textbf{\copyright \, \name}}% anpassen: (c) oder 
+\newcommand{\quelle}{\textbf{Quelle: \, \name}}% anpassen: Quelle:
+\newcommand{\logo}{\includegraphics[height=0.8cm]{images/Logo/Logo2.pdf}}% anpassen: Logo oder Datum
+
+
+\lhead{\quelle}
+\rhead{\logo}
+%\rhead{}
+\title{\titel}
+
+% pro Tabelle: farbige Zeilen im wechsel
+%\rowcolors{1}{}{grau2}% EIN / AUS: \showrowcolors o. \hiderowcolors
+
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+	\textbf{\Large \titel}\\%14pt
+        \vspace{0.4em}
+        \datum
+\end{center}
+
+% Zusammenfassung 
+%\begin{abstract} 
+%	\textcolor{purple}{>>Zusammenfassung<<}\\
+%	\vspace{0.4em}
+%	\raggedleft \small{-- Wikipedia}% 10pt
+%\end{abstract}
+
+% Check anpassen
+\begin{itemize}[label=\checkmark] %\itemsep -2pt
+    \item Erste Schritte mit Windows Server
+    \item Grundkonfiguration eines Windows Server
+    \item Installation eines Windows Server Betriebssystems
+    \item Was sind Rollen und Features?
+    \item Installation einer Active Directory Domäne
+    \item Active Directory Benutzer, Computer und Gruppen administrieren
+    \item Einen DHCP-Server installieren und betreiben
+    \item Backup und Restore eines Windows Servers
+    \item Windows Server als WSUS Server
+    \item Lizensierung
+    \item On-Premise vs. Cloud
+    \item Server-Manager und Admin-Center
+    \item Einführung in Active Directory Domänendienste
+    \item Computer (Client, Server) in die Domäne einbinden
+    \item Windows Server als DNS-Server einrichten
+    \item Gruppenrichtlinien wirksam einsetzen
+    \item Updates auf einem Windows Server installieren
+\end{itemize}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% anpassen
+	%\input{content/tex/neu}
+	%\input{content/tex/Spickzettel-Markdown} 
+ 	%\input{content/tex/Spickzettel-Latex} 
+    %\includepdf[pages=-]{Tabellen/PDF/Zeitrechner.pdf}
+	\input{content/tex/01-Keywords-Windows-Server.tex}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Bibliographie
+    %\printbibliography
+\end{document}

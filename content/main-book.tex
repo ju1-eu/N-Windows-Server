@@ -1,0 +1,53 @@
+\documentclass[fleqn,parskip=half]{scrreprt} % <= Druckversion: "scrbook" / Bildschirmversion: "scrreprt"
+\usepackage[ngerman,biber]{hpi-praeambel} % <= Sprache der Arbeit ("ngerman"/"english"), Biblatex-Backend ("bibtex"/"biber")
+
+% ABOUT
+\include{content/meta} 
+
+% DOCUMENT
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+
+
+\begin{document}
+	
+	% (Haupt-)Titelseite, Abstract, ggf. Danksagung & Inhaltsverzeichnis
+	\pagenumbering{roman}
+	\include{content/titlepage}
+	%\ifisbook\cleardoubleemptypage\fi\include{content/abstract}
+	\tableofcontents
+	\cleardoublepage
+
+	% Textteil
+	\pagenumbering{arabic}
+	
+	%\chapter{Checkliste}
+	% Check anpassen
+	%\begin{itemize}[label=\checkmark] \itemsep -2pt
+	%	\item Check  
+	%\end{itemize}
+	
+	% Textteil anpassen
+
+	%Randnotiz
+	%\todo{Make a cake \ldots}
+
+	%Fußnote~\footnote{Text der Fußnote.} 
+
+	%\textbf{Quelle:} \quelle
+
+	%Meine Website~\footnote{\url{\website}}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\input{content/inhalt}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+	% Bibliographie
+	\ifisbook\cleardoubleemptypage\fi
+	\phantomsection\addcontentsline{toc}{chapter}{\refname}
+	\printbibliography
+	
+\end{document}

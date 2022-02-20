@@ -1,0 +1,62 @@
+<!-----------------------------------------------
+Alle Abbildungen 'images/' in Markdown speichern.
+	* 'archiv/input-img.txt'
+ju 20-Feb-2022 input-img.txt
+------------------------------------------------->
+
+
+<!--titelbild vgl. abb.-->
+
+![titelbild](images/titelbild.pdf){width=60%}
+
+
+<!--* vgl. abb.-->
+
+![*](images/Skizze/*.pdf){width=60%}
+
+
+<!--Logo-Details vgl. abb.-->
+
+![Logo-Details](images/Logo/Logo-Details.pdf){width=60%}
+
+
+<!--Logo-Farbe vgl. abb.-->
+
+![Logo-Farbe](images/Logo/Logo-Farbe.pdf){width=60%}
+
+
+<!--Logo-Grau vgl. abb.-->
+
+![Logo-Grau](images/Logo/Logo-Grau.pdf){width=60%}
+
+
+<!--Logo-SW vgl. abb.-->
+
+![Logo-SW](images/Logo/Logo-SW.pdf){width=60%}
+
+
+<!--Logo-negativ vgl. abb.-->
+
+![Logo-negativ](images/Logo/Logo-negativ.pdf){width=60%}
+
+
+<!--Logo1 vgl. abb.-->
+
+![Logo1](images/Logo/Logo1.pdf){width=60%}
+
+
+<!--Logo2 vgl. abb.-->
+
+![Logo2](images/Logo/Logo2.pdf){width=60%}
+
+
+<!--logo-eps-converted-to vgl. abb.-->
+
+![logo-eps-converted-to](images/Logo/logo-eps-converted-to.pdf){width=60%}
+
+
+<!--logo vgl. abb.-->
+
+![logo](images/Logo/logo.pdf){width=60%}
+
+

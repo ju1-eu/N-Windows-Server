@@ -1,0 +1,35 @@
+\begin{titlepage}
+
+	% background picture
+	\begin{tikzpicture}[overlay, remember picture]
+	\node[anchor=north east, 
+		xshift=+0.2cm, 
+		yshift=+0.2cm] 
+		at (current page.north east)
+		{\includegraphics[width = 1.54\linewidth]{images/titelbild}};%titelbild 
+	\end{tikzpicture}
+
+	\centering	
+	\vspace*{12\baselineskip}
+
+
+	% oder background picture
+	%\includegraphics[width=\textwidth]{images/titelbild}
+	%\vspace*{4\baselineskip}
+
+	{\usekomafont{subject}\typ}\par
+	\vspace*{\baselineskip}
+	{\usekomafont{title}\titel}\par
+	\vspace*{\baselineskip}
+	{\usekomafont{subtitle}\fach}\par
+	\vspace*{\baselineskip}
+	{\smallskip\usekomafont{author}\autor}\par
+	{\usekomafont{date}\datum}\par
+	
+	\vfill
+
+	\setcounter{page}{1}
+
+\end{titlepage}
+
+

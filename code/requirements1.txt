@@ -1,0 +1,33 @@
+# Libraries
+ipython
+ipykernel
+ipympl
+numpy
+matplotlib
+pandas
+scikit-learn
+scipy
+seaborn
+plotly
+opencv-python
+Cython
+numba
+
+# Optional for Pandas
+openpyxl
+tabulate
+# tables # Errors on Windows
+
+# Testing
+pytest
+pre-commit
+pytest-benchmark
+
+# Linting
+flake8
+pylint
+mypy
+autopep8
+isort
+pre-commit
+black==21.4b0

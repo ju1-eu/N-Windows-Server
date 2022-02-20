@@ -1,0 +1,64 @@
+% ju 05-Feb-22
+\documentclass[11pt,paper=a4,fleqn,parskip=half]{scrartcl}   
+\include{content/praeambel-artikel}    
+
+\usepackage[left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.3cm]{geometry}% quer: landscape
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% anpassen
+\newcommand{\titel}{\LaTeX}
+\newcommand{\name}{Jan Unger}
+\newcommand{\datum}{\today}
+%\newcommand{\quelle}{\textbf{\copyright \, \name}}% anpassen: (c) oder 
+\newcommand{\quelle}{\textbf{Quelle: \, \name}}% anpassen: Quelle:
+\newcommand{\logo}{\includegraphics[height=0.8cm]{images/Logo1.pdf}}% anpassen: Logo oder Datum
+
+
+\lhead{\quelle}
+%\rhead{\logo}
+\rhead{}
+\title{\titel}
+
+% pro Tabelle: farbige Zeilen im wechsel
+%\rowcolors{1}{}{grau2}% EIN / AUS: \showrowcolors o. \hiderowcolors
+
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+	\textbf{\Large \titel}\\%14pt
+        \vspace{0.4em}
+        \datum
+\end{center}
+
+% Zusammenfassung 
+\begin{abstract} 
+	\textcolor{purple}{>>Zusammenfassung<<}\\
+	\vspace{0.4em}
+	\raggedleft \small{-- Wikipedia}% 10pt
+\end{abstract}
+
+% Check anpassen
+\begin{itemize}[label=\checkmark] %\itemsep -2pt
+       \item Check
+\end{itemize}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% anpassen
+	%\input{content/tex/neu}
+	%\input{content/tex/Spickzettel-Markdown} 
+ 	%\input{content/tex/Spickzettel-Latex} 
+    %\includepdf[pages=-]{Tabellen/PDF/Zeitrechner.pdf}
+	\input{content/tex/Tabelle.tex}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Bibliographie
+    %\printbibliography
+\end{document}
